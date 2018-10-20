@@ -1,0 +1,8 @@
+[run]
+branch = True
+include =
+    drc/__init__.py
+    drc/main.py
+
+[report]
+fail_under = 90
