@@ -20,7 +20,7 @@ class Core:
         r = requests.get(url)
         status_code = r.status_code
         if status_code is not 200:
-            raise Exception("Unable to send get request")
+            raise DRCInvalidStatusCode()
 
 
 class DRCException(Exception):
@@ -28,3 +28,7 @@ class DRCException(Exception):
     general class for exceptions
     """
     pass
+
+class DRCInvalidStatusCode(DRCException):
+    def __str__(self):
+        return 'unvalid status code'
