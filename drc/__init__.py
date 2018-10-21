@@ -13,6 +13,13 @@ class Core:
         NotImplemented
     
     def get_manifest(self, repo, reference):
+        """ getting manifest by the repo and reference
+
+        Parameters
+        ----------
+        repo : name of the repo
+        reference : link to the reference
+        """
         url = '{0}/v2/{1}/manifests/{2}'.format(self.host, repo, reference)
         return self._send_request_get(url)
 
