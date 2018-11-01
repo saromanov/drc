@@ -12,6 +12,17 @@ class Core:
     def repositories(self):
         NotImplemented
     
+    def add_blob(self, name):
+        """ add_blob is pushing blob to the registry
+
+        Parameters
+        ----------
+        name : Blob name
+        """
+        if name is None:
+            raise Exception("blob name is not defined")
+
+    
     def get_manifest(self, repo, reference):
         """ getting manifest by the repo and reference
 
