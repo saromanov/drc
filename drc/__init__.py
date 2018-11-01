@@ -39,6 +39,9 @@ class Core:
         status_code = r.status_code
         if status_code is not 200:
             raise DRCInvalidStatusCode()
+    
+    def _send_post_request(self, url):
+        raise NotImplemented
 
 
 class DRCException(Exception):
