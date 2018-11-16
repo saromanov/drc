@@ -21,6 +21,13 @@ class Core:
         """
         if name is None:
             raise Exception("blob name is not defined")
+    
+    def get_repositories(self):
+        """ get_repositories returns list of repositories
+            at current host
+        """
+        url = '{0}"/v2/_catalog'.format(self.host)
+        return self._send_request_get(url)
 
     
     def get_manifest(self, repo, reference):
