@@ -7,6 +7,9 @@ class Core:
     
     @property
     def token(self):
+        """
+         Authentication token
+        """
         return self_token
     
     def repositories(self):
