@@ -29,7 +29,14 @@ class Core:
         """ get_repositories returns list of repositories
             at current host
         """
-        url = '{0}"/v2/_catalog'.format(self.host)
+        url = '{0}/v2/_catalog'.format(self.host)
+        return self._send_request_get(url)
+    
+    def tags(self, tag):
+        """each Docker repository has a set of tags 
+        which can be downloaded
+        """
+        url = '{0}/v2/{1}/tags/list'.format(self.host, tag)
         return self._send_request_get(url)
 
     
