@@ -32,9 +32,17 @@ class Core:
         url = '{0}/v2/_catalog'.format(self.host)
         return self._send_request_get(url)
     
-    def tags(self, tag):
+    def tags(self, repo):
         """each Docker repository has a set of tags 
         which can be downloaded
+
+        Parameters
+        ----------
+        repo : name of the repo
+
+        Response
+        --------
+        List of the docker repositories
         """
         url = '{0}/v2/{1}/tags/list'.format(self.host, tag)
         return self._send_request_get(url)
